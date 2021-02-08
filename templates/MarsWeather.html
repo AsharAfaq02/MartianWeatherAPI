@@ -1,0 +1,165 @@
+
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+  body{
+     background-image: url("https://wallpaperaccess.com/full/1608.jpg");
+
+  }
+  .center{text-align: center; font-family: copperplate; color: #6F3A31}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.sol{
+  font-size: 30px;
+}
+</style>
+<script>
+var myList;
+$.getJSON('/marsJson')
+.done(function (data) {
+dataLength = data.solList.length
+var x = 0;
+
+for(x = 0; x<dataLength; x++){
+  
+  $("#sol"+x).html("Sol "+data.solList[x]);
+  $("#mnt"+x).html("Month Ordinal: "+data.Month[x]);
+   $("#szn"+x).html("Season: "+data.Season[x]);
+   $("#Pa"+x).html("Average Atmospheric Presure: "+data.PressureAvg[x] +" Pa");
+   $("#Tmp"+x).html("Tempurature: Currently Unavailable")
+
+}
+
+
+
+});
+
+</script>
+
+<body>
+  <h1 style = "color: white; text-align: center; font-family: garamond"> The Martian Weather </h1>
+  <h1 style = "color: white; text-align: center; font-family: garamond"> Recorded by the Curiosity Mars Rover </h1>
+
+  <div class="shadow-lg p-3 mb-5 rounded" style = "width:15%; height:auto; float:left; margin-left: 4% ; background-color: lightgrey">
+    <div class = "center">
+    <h id = "sol0" class = "sol"></h>
+    <br>
+    <br>
+    <h id = "mnt0"></h>
+    <br>
+    <br>
+     <h id = "szn0"></h>
+     <br>
+    <br>
+     <h id = "Pa0"></h>
+     <br>
+    <br>
+     <h id = "Tmp0"></h>
+   </div>
+  </div>
+<div class="shadow-lg p-3 mb-5 rounded" style = "width:15%; height: auto; float:left; margin-left: 4%; background-color: lightgrey">
+    <div class = "center">
+    <h id = "sol1" class = "sol"></h>
+    <br>
+    <br>
+    <h id = "mnt1"></h>
+    <br>
+    <br>
+    <h id = "szn1"></h>
+    <br>
+    <br>
+     <h id = "Pa1"></h>
+     <br>
+    <br>
+     <h id = "Tmp1"></h>
+  </div>
+</div>
+  <div class="shadow-lg p-3 mb-5 rounded" style = "width:15%; height: auto; float:left; margin-left: 4%; background-color: lightgrey">
+    <div class = "center">
+    <h id = "sol2" class = "sol"></h>
+    <br>
+    <br>
+    <h id = "mnt2"></h>
+    <br>
+    <br>
+    <h id = "szn2"></h>
+    <br>
+    <br>
+     <h id = "Pa2"></h>
+     <br>
+    <br>
+     <h id = "Tmp2"></h>
+  </div>
+</div>
+  <div class="shadow-lg p-3 mb-5 rounded" style = "width:15%; height: auto; float:left; margin-left: 4%; background-color: lightgrey">
+    <div class = "center">
+    <h id = "sol3" class = "sol"></h>
+    <br>
+    <br>
+    <h id = "mnt3"></h>
+    <br>
+    <br>
+    <h id = "szn3"></h>
+    <br>
+    <br>
+     <h id = "Pa3"></h>
+     <br>
+    <br>
+     <h id = "Tmp3"></h>
+  </div>
+</div>
+  <div class="shadow-lg p-3 mb-5 rounded" style = "width:15%; height: auto; float:left; margin-left: 4%; background-color: lightgrey">
+    <div class = "center">
+    <h id = "sol4" class = "sol"></h>
+    <br>
+    <br>
+    <h id = "mnt4"></h>
+    <br>
+    <br>
+    <h id = "szn4"></h>
+    <br>
+    <br>
+     <h id = "Pa4"></h>
+     <br>
+    <br>
+     <h id = "Tmp4"></h>
+  </div>
+</div>
+  <div class="shadow-lg p-3 mb-5 rounded" style = "width:15%; height: auto; float:left; margin-left: 4%; background-color: lightgrey">
+    <div class = "center">
+    <h id = "sol5" class = "sol"></h>
+    <br>
+    <br>
+    <h id = "mnt5"></h>
+    <br>
+    <br>
+    <h id = "szn5"></h>
+    <br>
+    <br>
+     <h id = "Pa5"></h>
+     <br>
+    <br>
+     <h id = "Tmp5"></h>
+  </div>
+</div>
+<br>
+<br>
+  <div class = "footer" style = "color: white; text-align: center; font-family: garamond">
+   Data by <a href = "https://api.nasa.gov/">NASA API</a><br>
+    Webpage by <a href = "mailto:asharafaq16@gmail.com">Ashar Afaq @2020</a>
+   </div>
+
+</body>
+</html>
